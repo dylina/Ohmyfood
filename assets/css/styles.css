@@ -1,0 +1,42 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --Primary: #9356DC;
+    --bg-color: #F6F6F6;
+    --Grey: #353535;
+    --gradient-color: #FF79DA;
+    --grey-tint-1: #7E7E7E;
+    --Grey-2: #EAEAEA;
+    --black: #000;
+}
+
+html, body {
+    margin: 0;
+    padding:0;
+}
+
+
+.page-header {
+    position: relative;
+}
+
+.logo-top {
+    height: 30px;
+    margin: 14px 19px 13px 16px;
+
+}
+
+.nav-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background: var(--Grey-2, #EAEAEA);
+}
+
+h1 {
+    color: var(--black);
+ }
