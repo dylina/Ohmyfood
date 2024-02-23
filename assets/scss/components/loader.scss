@@ -1,0 +1,38 @@
+.loader {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: loaderOff 1s 1s forwards;
+  &::after {
+    content: "";
+    width: 45px;
+    height: 45px;
+    border: 8px solid var(--primary, #9356dc);
+    border-top-color: $border-top-color_1;
+    border-radius: 50%;
+    animation: rotation 1s ease infinite;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderOff {
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

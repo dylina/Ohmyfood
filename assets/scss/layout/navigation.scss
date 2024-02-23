@@ -1,0 +1,39 @@
+$color_1: var(--grey, #353535);
+
+.header-navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: $background-color_1;
+  @media (min-width: 1025px) {
+    .header-navigation {
+      height: 95px;
+    }
+  }
+}
+
+.nav-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background: var(--grey-light, #eaeaea);
+}
+
+.form-elements {
+  color: $color_1;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.actual-location {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 17px;
+  width: 130px;
+  line-height: normal;
+  font-style: normal;
+}

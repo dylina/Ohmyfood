@@ -1,0 +1,25 @@
+.plat-choisi {
+  width: 59px;
+  height: 100%;
+  background-color: var(--green-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-circle-check {
+  color: var(--white, #ffffff);
+}
+
+.inputCheck {
+  display: none;
+  &:checked {
+    ~ {
+      .card-menu {
+        .card-prix {
+          left: calc(100% - 50px - 50px);
+        }
+      }
+    }
+  }
+}

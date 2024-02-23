@@ -1,0 +1,598 @@
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #9356dc;
+  --bg-color: #f6f6f6;
+  --grey: #353535;
+  --gradient-color: #ff79da;
+  --grey-tint: #7e7e7e;
+  --grey-light: #eaeaea;
+  --black: #000;
+  --white: #ffffff;
+  --green-light: #99e2d0;
+  --green: #008766;
+  --button-gradient: linear-gradient(
+    180deg,
+    rgba(255, 121, 218, 1) 0%,
+    rgba(147, 86, 220, 1) 100%
+  );
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*des keyframes pour animer l'apparittion des elements en page*/
+
+@keyframes nav-load-like {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes nav-load {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes nav-load-img {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes nav-link-load {
+  0% {
+    transform: scale(0);
+  }
+
+  90% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*partie loader*/
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: loaderOff 1s 1s forwards;
+}
+
+.loader::after {
+  content: "";
+  width: 45px;
+  height: 45px;
+  border: 8px solid var(--primary, #9356dc);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: rotation 1s ease infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderOff {
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.header-navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--white, #ffffff);
+  animation: nav-load 1.5s ease-in;
+}
+
+.header-icon {
+  text-decoration: none;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+}
+
+.fa-sharp {
+  color: var(--grey, #353535);
+  display: flex;
+  justify-content: center;
+  padding: 17px 0px 17px 17px;
+}
+
+.logo-top {
+  color: var(--black, #000);
+  padding-top: 14px;
+  padding-bottom: 13px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 63px;
+}
+
+.logo-top a {
+  max-width: 200px;
+}
+
+.header-image img {
+  width: 100%;
+  height: 275px;
+  object-fit: cover;
+  animation: nav-load-img 1.7s ease-in;
+}
+
+.section-menu-restaurant {
+  background-color: var(--bg-color, #f6f6f6);
+  padding-top: 32px;
+  position: relative;
+  border-radius: 35px 35px 0 0;
+  padding-bottom: 0;
+  margin-top: -40px;
+  padding-right: 13px;
+  padding-left: 13px;
+}
+
+.plats-au-choix {
+  padding-bottom: 28px;
+}
+
+.titre-principal {
+  color: var(--black, #000);
+  font-family: Shrikhand;
+  font-size: 28px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 42px;
+  padding-right: 24px;
+}
+
+/*partie like anime*/
+
+.heart-restaurant-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.like {
+  right: calc(100% / 2 - 160px);
+  position: absolute;
+  top: 45px;
+  display: flex;
+  padding-right: 5px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.like input[type="checkbox"] + label {
+  height: 22px;
+  width: 22px;
+  position: relative;
+}
+
+input[type="checkbox"] + label svg:nth-child(1) {
+  transform: scale(0.99);
+  position: absolute;
+  left: 0px;
+  fill: url(#grad2);
+}
+
+input[type="checkbox"] + label svg:nth-child(2) {
+  z-index: 3;
+  position: absolute;
+  fill: #000000;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+input[type="checkbox"] + label .drape {
+  z-index: 0;
+  position: absolute;
+  background-color: #f6f6f6;
+  height: 22px;
+  width: 22px;
+  transition: transform 1s ease-in-out;
+}
+
+input[type="checkbox"]:checked + label svg:nth-child(2) {
+  opacity: 0;
+}
+
+input[type="checkbox"]:checked + label svg:nth-child(2) + .drape {
+  transform: translateY(-25px);
+}
+
+.nom-partie-menu {
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: uppercase;
+  padding-bottom: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nom-partie-menu::before {
+  content: "";
+  width: 40px;
+  height: 3px;
+  background: #99e2d0;
+  display: inline;
+  position: relative;
+  left: 1px;
+  bottom: -26px;
+}
+
+/*les cards*/
+
+.card-menu {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  display: block;
+}
+
+.card-menu-plat {
+  height: 100%;
+  background: var(--white, #ffffff);
+  padding: 15px;
+  display: block;
+}
+
+.plat-nom {
+  margin: 0%;
+  padding-bottom: 5px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  max-width: calc(100% - 83px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.plat-complementaire {
+  margin: 0%;
+  font-family: Roboto;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: calc(100% - 83px);
+}
+
+.card-prix {
+  height: 100%;
+  width: 100px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: calc(100% - 50px);
+  transition: linear 0.3s;
+  display: flex;
+  flex-direction: row;
+}
+
+.prix-plat {
+  width: 59px;
+  height: 100%;
+  background: var(--white, #ffffff);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+
+.plat-choisi {
+  width: 59px;
+  height: 100%;
+  background-color: var(--green-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-circle-check {
+  color: var(--white, #ffffff);
+}
+
+.inputCheck {
+  display: none;
+}
+
+.inputCheck:checked ~ .card-menu .card-prix {
+  left: calc(100% - 50px - 50px);
+}
+
+.card-menu:hover .card-prix {
+  left: calc(100% - 50px - 50px);
+}
+
+/*la partie finale du main ou c'est place le btn*/
+
+.main-btn-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.page-main-button {
+  width: 218px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  transition: linear 0.3s;
+  background: none;
+  z-index: 10;
+  animation-name: nav-link-load;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-delay: 2.9s;
+  animation-fill-mode: forwards;
+  transform: scale(0);
+}
+
+@keyframes nav-link-load {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.page-main-button span {
+  z-index: 20;
+  color: var(--white, #fff);
+}
+
+.page-main-button::before {
+  content: "";
+  width: 218px;
+  height: 50px;
+  position: absolute;
+  border-radius: 25px;
+  z-index: 1;
+  opacity: 1;
+  background: var(
+    --button-gradient,
+    linear-gradient(
+      180deg,
+      rgba(255, 121, 218, 1) 0%,
+      rgba(147, 86, 220, 1) 100%
+    )
+  );
+  transition: linear 0.3s;
+}
+
+.page-main-button:hover::before {
+  opacity: 0.5;
+}
+
+/*partie finale FOOTER*/
+
+.footer {
+  background-color: var(--grey, #353535);
+  padding: 22px 25px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.footer-logo {
+  display: flex;
+  height: 27px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-list {
+  padding: 0;
+  margin: 0;
+  padding-top: 15px;
+}
+
+.footer-list-item a {
+  color: var(--white, #fff);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footer-list-item {
+  list-style: none;
+  padding-bottom: 8px;
+}
+.footer {
+  background-color: var(--grey, #353535);
+  width: 100%;
+  padding: 22px 25px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.footer-logo {
+  display: flex;
+  height: 27px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-list {
+  padding: 0;
+  margin: 0;
+  padding-top: 15px;
+}
+
+.footer-list-item a {
+  color: var(--white, #fff);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footer-list-item {
+  list-style: none;
+  padding-bottom: 8px;
+}
+
+.titre-principal {
+  animation: titreRestaurant 1.7s 1s forwards;
+}
+
+@keyframes titreRestaurant {
+  0% {
+    transform: translateX(20px) translateY(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px) translateY(0px);
+    opacity: 1;
+  }
+}
+
+.plats-au-choix:nth-child(2) .article-title {
+  animation: menuOn 2s 1s forwards;
+}
+
+.plats-au-choix:nth-child(3) .article-title {
+  animation: menuOn 2s 1s forwards;
+}
+
+.plats-au-choix:nth-child(4) .article-title {
+  animation: menuOn 2s 1s forwards;
+}
+
+.menu:nth-child(1) {
+  animation: menuOn 2.4s 1s forwards;
+}
+.menu:nth-child(2) {
+  animation: menuOn 2.8s 1s forwards;
+}
+.menu:nth-child(3) {
+  animation: menuOn 3.2s 1s forwards;
+}
+.menu:nth-child(4) {
+  animation: menuOn 3.2s 1s forwards;
+}
+
+@keyframes menuOn {
+  0% {
+    transform: translateX(-10px) translateY(-10px);
+    opacity: 0;
+  }
+  70% {
+    transform: translateX(-10px) translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px) translateY(0px);
+    opacity: 1;
+  }
+}
+
+/*media pour desktop*/
+
+@media (min-width: 1025px) {
+  .header-navigation {
+    height: 95px;
+  }
+
+  .header-image img {
+    height: 565px;
+  }
+
+  .like {
+    right: calc(100% / 2 - 160px);
+    position: absolute;
+    top: 62px;
+  }
+
+  .section-menu-restaurant {
+    padding-top: 50px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: -40px;
+    max-width: 1055px;
+    padding-left: 211px;
+    padding-right: 211px;
+  }
+
+  .footer-column {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 80px;
+    padding-right: 25px;
+  }
+
+  .footer-list {
+    display: flex;
+    gap: 35px;
+  }
+
+  .footer {
+    padding: 40px 25px 30px 25px;
+  }
+}

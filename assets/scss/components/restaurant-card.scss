@@ -1,0 +1,58 @@
+.card-menu {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 12px;
+  background-color: var(--green-light);
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  display: block;
+
+  &-plat {
+    height: 100%;
+    background: var(--white, #ffffff);
+    padding: 15px;
+  }
+}
+
+.plat-nom {
+  margin: 0%;
+  padding-bottom: 5px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  max-width: calc(100% - 83px);
+}
+
+.plat-complementaire {
+  margin: 0%;
+  font-family: Roboto;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  display: flex;
+  max-width: calc(100% - 83px);
+}
+
+.card-prix {
+  height: 100%;
+  width: 100px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: calc(100% - 50px);
+  transition: linear 0.3s;
+  display: flex;
+  flex-direction: row;
+}
+
+.prix-plat {
+  width: 59px;
+  height: 100%;
+  background: var(--white, #ffffff);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 15px;
+}
