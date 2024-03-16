@@ -61,9 +61,9 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 999;
-  animation: loaderOff 1s 1s forwards;
+  animation: loaderOff 1s 1s forwards; /* Animation de disparition du loader après 1 seconde de délai */
 }
-
+/* Style pour la partie circulaire du loader */
 .loader::after {
   content: "";
   width: 45px;
@@ -71,7 +71,7 @@ body {
   border: 8px solid var(--primary, #9356dc);
   border-top-color: white;
   border-radius: 50%;
-  animation: rotation 1s ease infinite;
+  animation: rotation 1s ease infinite;/* Animation de rotation pendant 1 seconde en boucle infinie */
 }
 
 @keyframes rotation {

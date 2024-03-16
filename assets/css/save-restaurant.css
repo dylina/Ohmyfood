@@ -85,7 +85,7 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 999;
-  animation: loaderOff 1s 1s forwards;
+  animation: loaderOff 1s 1s forwards;/* Animation de disparition du loader après 1 seconde de délai */
 }
 
 .loader::after {
@@ -95,7 +95,7 @@ body {
   border: 8px solid var(--primary, #9356dc);
   border-top-color: white;
   border-radius: 50%;
-  animation: rotation 1s ease infinite;
+  animation: rotation 1s ease infinite;/* Animation de rotation pendant 1 seconde en boucle infinie */
 }
 
 @keyframes rotation {
@@ -110,7 +110,7 @@ body {
 @keyframes loaderOff {
   to {
     opacity: 0;
-    pointer-events: none;
+    pointer-events: none;/* Désactivation des événements de pointeur pendant l'animation */
   }
 }
 
@@ -345,20 +345,32 @@ input[type="checkbox"]:checked + label svg:nth-child(2) + .drape {
 
 .inputCheck {
   display: none;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
 }
 
-.inputCheck:checked ~ .card-menu .card-prix {
+.card-menu label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.inputCheck:checked ~ .card-content .card-prix {
   left: calc(100% - 50px - 50px);
 }
 
-.card-menu:hover .card-prix {
+.card-menu:hover ~ .card-content .card-prix {
   left: calc(100% - 50px - 50px);
 }
 
 /*la partie finale du main ou c'est place le btn*/
 
 .main-btn-container {
-  display: flex;
+  display: flex; 
   justify-content: center;
   padding-bottom: 40px;
 }
