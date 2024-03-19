@@ -52,6 +52,7 @@
 	justify-content: center;
 	width: 100%;
 	height: 59px;
+	
 	a {
 		max-width: 200px;
 	}
@@ -109,7 +110,7 @@
 }
 @media (min-width: 1025px) {
 	.header-navigation {
-		height: 95px;
+		height: 80px;
 	}
 	.header-image {
 		img {
@@ -124,5 +125,8 @@
 		max-width: 1055px;
 		padding-left: 211px;
 		padding-right: 211px;
+	}
+	.logo-top {
+		height: 69px;
 	}
 }

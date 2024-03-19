@@ -198,7 +198,7 @@ html, body {
   padding: 14px 10px 13px 10px;
   display: flex;
   justify-content: center;
-  height: 59px;
+  width: 100%;
 }
 
 .nav-main {
@@ -252,7 +252,7 @@ html, body {
 
 @media (min-width: 1025px) {
   .logo-nav {
-    height: 90px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -263,7 +263,6 @@ html, body {
     padding-bottom: 31px;
     justify-content: center;
     max-width: 200px;
-    height: 63px;
   }
 }
 .heart-restaurant-container {
@@ -428,7 +427,7 @@ html, body {
 
 @media (min-width: 1025px) {
   .header-navigation {
-    height: 95px;
+    height: 80px;
   }
   .header-image img {
     height: 565px;
@@ -441,6 +440,9 @@ html, body {
     max-width: 1055px;
     padding-left: 211px;
     padding-right: 211px;
+  }
+  .logo-top {
+    height: 69px;
   }
 }
 .heart-restaurant-container {
