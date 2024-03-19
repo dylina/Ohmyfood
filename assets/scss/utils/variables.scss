@@ -1,5 +1,30 @@
-$color_1: #008766;
-$color_2: #000;
-$font-family_1: Roboto;
-$background-color_1: #99e2d0;
-$background-color_2: var(--white, #ffffff);
+$color_1: var(--grey, #353535);
+$color_2: var(--black, #000);
+$color_3: var(--white, #fff);
+$color_4: var(--grey-tint, #7e7e7e);
+$color_5: var(--primary, #9356dc);
+$color_6: #008766;
+
+$font-family_1: Shrikhand;
+$font-family_2: Roboto;
+
+$background-color_1: var(--white, #ffffff);
+$background-color_2: var(--bg-color, #f6f6f6);
+$background-color_3: var(--green-light, #99e2d0);
+$background-color_4: var(--grey, #353535);
+
+$border-top-color_1: white;
+
+.heart-restaurant-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .like {
+    right: calc(100% / 2 - 160px);
+    position: absolute;
+    top: 45px;
+    display: flex;
+    padding-right: 5px;
+  }

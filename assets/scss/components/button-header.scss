@@ -1,0 +1,51 @@
+@use "../utils/variables.scss";
+
+.header-btn-container {
+	display: flex;
+	justify-content: center;
+	padding-top: 10px;
+	animation-name: nav-link-load;
+	animation-duration: var(--nav-link-load-time);
+	animation-timing-function: ease-in;
+	animation-delay: var(--nav-load-time);
+	animation-fill-mode: forwards;
+	transform: scale(0);
+}
+.page-header-button {
+	width: 218px;
+	height: 50px;
+	border-radius: 25px;
+	font-size: 16px;
+	text-decoration: none;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+	transition: linear 0.3s;
+	background: none;
+	z-index: 10;
+	
+	span {
+		z-index: 20;
+		color: $color_3;
+		display: flex;
+	}
+	&::before {
+		content: "";
+		width: 218px;
+		height: 50px;
+		border-radius: 25px;
+		position: absolute;
+		z-index: 1;
+		opacity: 1;
+		background: var( --button-gradient, linear-gradient( 180deg, rgba(255, 121, 218, 1) 0%, rgba(147, 86, 220, 1) 100% ) );
+		transition: linear 0.3s;
+	}
+	&:hover {
+		&::before {
+			opacity: 0.5;
+		}
+	}
+}

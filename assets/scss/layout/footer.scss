@@ -1,50 +1,49 @@
+@use "../utils/variables.scss";
+
+/*FOOTER*/
 .footer {
-  background-color: var(--grey, #353535);
-  width: 100%;
-  padding: 22px 25px;
-
-  @media (min-width: 1025px) {
-    padding: 40px 25px 30px 25px;
-  }
-
-  &-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-
-    @media (min-width: 1025px) {
-      display: flex;
-      flex-direction: row-reverse;
-      align-items: center;
-      gap: 80px;
-      padding-right: 25px;
-    }
-  }
-  &-logo {
-    display: flex;
-    height: 27px;
-    filter: brightness(0) invert(1);
-  }
-
-  &-list {
-    padding: 0;
-    margin: 0;
-    padding-top: 15px;
-
-    @media (min-width: 1025px) {
-      display: flex;
-      gap: 35px;
-    }
-  }
+	background-color: $background-color_4;
+	padding: 22px 25px;
+	width: 100%;
+}
+.footer-column {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+.footer-logo {
+	display: flex;
+	height: 27px;
+	filter: brightness(0) invert(1);
+}
+.footer-list {
+	padding: 0;
+	margin: 0;
+	padding-top: 15px;
 }
 .footer-list-item {
-  list-style: none;
-  padding-bottom: 8px;
-
-  a {
-    color: var(--white, #fff);
-    font-size: 16px;
-    font-weight: 500;
-    text-decoration: none;
-  }
+	a {
+		color: $color_3;
+		font-weight: 500;
+		text-decoration: none;
+		font-size: 16px;
+	}
+	list-style: none;
+	padding-bottom: 8px;
+}
+@media (min-width: 1025px) {
+	.footer-column {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		gap: 80px;
+		padding-right: 25px;
+	}
+	.footer-list {
+		display: flex;
+		gap: 35px;
+	}
+	.footer {
+		padding: 40px 25px 30px 25px;
+	}
 }

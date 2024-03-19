@@ -1,20 +1,20 @@
-@import "base/restaurat-base.scss";
+@import "base/_base.scss";
+
+@import "utils/variables.scss";
+@import "utils/keyframes.scss";
+
 @import "components/loader.scss";
-@import "components/keyframes.scss";
-@import "layout/restaurant-header.scss";
-@import "components/restaurant-section.scss";
+@import "components/header.scss";
+@import "components/navigation.scss";
+@import "components/header-restaurant.scss";
+@import "components/button-header.scss";
 @import "components/likebtn.scss";
-@import "components/restaurant-card.scss";
-@import "components/restaurants-plat-choisi.scss";
-@import "components/restaurant-main-btn.scss";
+@import "components/fonctionnement.scss";
+@import "components/card.scss";
+@import "components/card-restaurant.scss";
+@import "components/button-restaurants.scss";
+
 @import "layout/footer.scss";
-
-
-// Tu fais le code HTML
-
-// Tu fais le design en SCSS (plusieurs fichiers, etc..)
-// Transformer le SCSS en CSS
 
 // sass --watch ./assets/scss/restaurant.scss ./assets/css/restaurant.css
 
-// Création avec cette commande d'un fichier css que l'on utilise dans le code HTML

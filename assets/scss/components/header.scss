@@ -1,0 +1,82 @@
+@use "../utils/variables.scss";
+
+
+.page-header {
+	position: relative;
+}
+
+.logo-nav {
+	height: 68px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+.logo-top {
+	color: $color_2;
+	padding: 14px 10px 13px 10px;
+	display: flex;
+	justify-content: center;
+	height: 59px;
+    }
+}
+
+.nav-main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	background: var(--grey-light, #eaeaea);
+	animation: nav-load 1.7s ease-in;
+}
+.form-elements {
+	color: $color_1;
+	display: flex;
+	justify-content: center;
+	padding: 0;
+}
+.actual-location {
+	background: transparent;
+	border: none;
+	font-size: 16px;
+	font-weight: 500;
+	padding-left: 17px;
+	width: 130px;
+	line-height: normal;
+	font-style: normal;
+}
+.header-info {
+	background-color: $background-color_2;
+	padding-top: 39px;
+	padding-bottom: 57px;
+}
+.titre-principal-info {
+	color: $color_2;
+	text-align: center;
+	padding: 0 50px;
+	animation: nav-load 1.9s ease-in;
+}
+.paragraph-info {
+	text-align: center;
+	color: $color_1;
+	font-size: 18px;
+	font-weight: 300;
+	padding: 0 30px;
+	animation: nav-load 2.1s ease-in;
+}
+@media (min-width: 1025px) {
+	.logo-nav {
+		height: 90px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	
+	&-top {
+		display: flex;
+		padding-top: 30px;
+		padding-bottom: 31px;
+		justify-content: center;
+		max-width: 200px;
+		height: 63px;
+        }
+    }
+}
