@@ -931,6 +931,11 @@ input[type=checkbox]:checked + label svg:nth-child(2) + .drape {
   background: var(--white, #ffffff);
   padding: 15px;
   display: block;
+  display: inline-block;
+  max-width: calc(100% - 100px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .plat-nom {
@@ -940,7 +945,7 @@ input[type=checkbox]:checked + label svg:nth-child(2) + .drape {
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  max-width: calc(100% - 83px);
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -953,7 +958,7 @@ input[type=checkbox]:checked + label svg:nth-child(2) + .drape {
   font-weight: 300;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: calc(100% - 83px);
+  overflow: hidden;
 }
 
 .card-prix {
